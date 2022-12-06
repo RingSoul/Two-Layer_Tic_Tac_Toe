@@ -1,0 +1,74 @@
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    text-align: center;
+    font-family: comic sans ms;
+}
+
+h1
+{
+    color: #000000;
+}
+
+a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+button, a
+{
+    background-color: #0e96a2;
+    font-family: courier new;
+    font-size: 12pt;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 5pt;
+    border-color: #0f6b75;
+    padding: 1%;
+}
+
+
+
+table
+{
+    width: 100%;
+    border: thick solid #630000;
+}
+
+td
+{
+    position: relative;
+    width: 33%;
+    height: 10vh;
+    border: thick solid #000000;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+img
+{
+    width: inherit;
+    height: inherit;
+}
+
+img.lock
+{
+    width: 25%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+img.ban
+{
+    width: 25%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

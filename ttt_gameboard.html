@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mutated/Mundane Tic Tac Toe</title>
+        <link rel="stylesheet" href="ttt_appearance.css"/>
+        <script src="ttt_functionality.js"></script>
+		<style>
+			
+		</style>
+		<script>
+            
+		</script>
+	</head>
+	
+	<body onload="initialize();">
+		<h1 id="header">Two-Layer Tic Tac Toe</h1>
+        <form id="user-input">
+            Select your role (note that X goes first): 
+            <label>
+                <input type="radio" name="role" value="x"/>
+                X 
+            </label> 
+            <label>
+                <input type="radio" name="role" value="o"/>
+                O 
+            </label>
+            <br />
+            <br />
+            <button onclick="startGame();">Confirm my role and start the game</button> 
+            <a href="#instructions">Read instructions</a> 
+            <button onclick="reset();">Reset the game and my role</button>
+        </form>
+        <br />
+        <table id="gameboard"></table>
+        <br />
+        <div id="instructions"></div>
+	</body>
+</html>
