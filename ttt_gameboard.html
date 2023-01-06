@@ -13,7 +13,7 @@
 	</head>
 	
 	<body onload="initialize();">
-		<h1 id="header">Two-Layer Tic Tac Toe</h1>
+		<h1 id="header"></h1>
         <form id="user-input">
             Select your role (note that X goes first): 
             <label>
@@ -26,12 +26,12 @@
             </label>
             <br />
             <br />
-            <button onclick="startGame();">Confirm my role and start the game</button> 
-            <a href="#instructions">Read instructions</a> 
+            <button onclick="start();">Confirm my role and start the game</button> 
+            <a href="instructions.html" target="_blank">Read instructions</a> 
             <button onclick="reset();">Reset the game and my role</button>
         </form>
         <br />
-        <table id="gameboard"></table>
+        <table id="game-board"></table>
         <br />
         <div id="instructions"></div>
 	</body>
