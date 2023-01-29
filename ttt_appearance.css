@@ -1,7 +1,16 @@
+html
+{
+    --SIZE: 3;
+    --HEIGHT: 60vh;
+    --WIDTH: 90vw;
+}
+
 body
 {
+    margin: 0px;
     text-align: center;
     font-family: comic sans ms;
+    background-color: #a9bfc86d;
 }
 
 h1
@@ -17,52 +26,103 @@ a
 
 button, a
 {
-    background-color: #0e96a2;
+    background-color: #b2bde6;
     font-family: courier new;
     font-size: 12pt;
     font-weight: bold;
-    border-style: solid;
+    border-style: outset;
     border-width: 5pt;
-    border-color: #0f6b75;
+    border-color: #9facdd;
     padding: 1%;
+    margin: 1%;
+}
+
+div#framer
+{
+    display: grid;
+    grid-template-columns: 5fr 90fr 5fr;
+    grid-template-rows: 1fr;
+    height: var(--HEIGHT);
+}
+
+div.margin > img
+{
+    width: 5vw;
+}
+
+div#left_margin
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+div#game_board
+{
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+
+    display: grid;
+    grid-template-rows: repeat(var(--SIZE), 1fr); 
+    grid-template-columns: repeat(var(--SIZE), 1fr); 
+    gap: 0;
+    
+    height: var(--HEIGHT);
+    width: var(--WIDTH);
+}
+
+div#right_margin
+{
+    grid-column: -2 / -1;
+    grid-row: 1 / -1;
+}
+
+div.block
+{
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    
+    background-color: #ffffff;
+    border: thin groove #a4a4a4; 
+
+    height: calc(var(--HEIGHT) / var(--SIZE)); /* crucial for preventing the size of div from expanding when inserting image */
+    width: 100%;
 }
 
 
+div.block > div
+{
+    grid-row: 1 / -1;
+}
 
-table
+
+div.status
+{
+    grid-column: 1 / 2;
+}
+
+div.icon
+{
+    grid-column: 2 / 3;
+}
+
+div.result
+{
+    grid-column: 3 / 4;
+}
+
+
+img.status, img.icon, img.result
 {
     width: 100%;
-    border: thick solid #630000;
+    height: calc(var(--HEIGHT) / var(--SIZE));
+    object-fit: contain; /* object-fit ONLY works when width and height are specified first */
 }
 
-td
-{
-    position: relative;
-    width: 33%;
-    height: 10vh;
-    border: thick solid #000000;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
 
-img
+button#computer
 {
-    width: inherit;
-    height: inherit;
-}
-
-img.lock
-{
-    width: 25%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-img.ban
-{
-    width: 25%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    background-color: #e72222;
+    border-color: #ed3b3b;
 }

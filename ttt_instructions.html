@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Mutated/Mundane Tic Tac Toe</title>
-        <link rel="stylesheet" href="ttt_appearance.css"/>
-		<style>
-			
-		</style>
-		<script>
-            
-		</script>
+		<title>Instructions</title>
+		<link href="instructions_appearance.css" rel="stylesheet" />
+		<script src="instructions_functionality.js"></script>
 	</head>
 	
-	<body>
-		
+	<body onload="initialize();">
+		<div id="instructions_framer">
+			<div id="bubbling"> <img src="images/bubbling.png" /> </div>
+			<div id="menu">
+				<div class="items" id="video">Demo Video</div>
+				<div class="items" id="general">General Rule</div>
+				<div class="items" id="lock"> <img src="images/lock.png" /> </div>
+				<div class="items" id="ban"> <img src="images/ban.png" /> </div>
+				<div class="items" id="win"> <img src="images/win.png" /> </div>
+				<div class="items" id="lose"> <img src="images/lose.png" /> </div>
+			</div>
+			<div id="info"></div>
+		</div>
 	</body>
 </html>
