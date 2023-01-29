@@ -625,6 +625,10 @@ function letComputerMove() // back end
         {
             header = `This is your turn; click on an available block to proceed with the game.`;
         }
-        display();
     }
+    else
+    {
+        header = "The game is not started yet.";
+    }
+    display();
 }
