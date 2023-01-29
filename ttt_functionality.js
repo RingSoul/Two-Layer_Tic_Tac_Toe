@@ -104,7 +104,7 @@ function createBackEndGameBoard() // back end
     }
 }
 
-function display() // front end
+function display() // UNIVERSAL FRONT END METHOD
 {
     if (isGameStarted)
     {

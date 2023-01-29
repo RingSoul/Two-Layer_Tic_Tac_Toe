@@ -52,8 +52,8 @@ function displayInfo(itemId) // for click event listener
     shiftFocusAway();
     if (itemId === "video")
     {
-        createVideo();
         focusedItem = itemsCollection[0];
+        // info would be empty string
     }
     else
     {
@@ -73,16 +73,24 @@ function displayInfo(itemId) // for click event listener
     display();
 }
 
-function display()
+function display() // UNIVERSAL FRONT END METHOD
 {
     infoOutput.innerHTML = ""; // clear first
     let infoContentDiv = document.createElement("div");
     infoContentDiv.setAttribute("id", "info_content");
-    infoContentDiv.innerHTML = info;
-    infoOutput.append(infoContentDiv);
+    if (focusedItem === itemsCollection[0]) // if === Demo Video
+    {
+        let video = createVideo();
+        infoContentDiv.appendChild(video);
+    }
+    else
+    {
+        infoContentDiv.innerHTML = info;
+    }
+    infoOutput.appendChild(infoContentDiv);
 }
 
-function shiftFocusOnto() // manipulate front end
+function shiftFocusOnto() // manipulates front end
 {
     if (focusedItem !== null)
     {
@@ -90,7 +98,7 @@ function shiftFocusOnto() // manipulate front end
     }
 }
 
-function shiftFocusAway() // manipulate front end
+function shiftFocusAway() // manipulates front end
 {
     if (focusedItem !== null)
     {
@@ -101,9 +109,14 @@ function shiftFocusAway() // manipulate front end
 function createVideo() // directly manipulates the front end
 {
     let video = document.createElement("video");
-    video.src = "";
+    video.src = "ttt_demo.mp4";
     video.autoplay = false;
     video.controls = true;
     video.muted = true;
     video.loop = false;
+    video.innerHTML = "If the video does not show up, don't panic, it is not important anyway.";
+    video.style.height = "100%";
+    video.style.width = "100%";
+    video.style.objectFit = "contain";
+    return video;
 }
