@@ -167,19 +167,26 @@ function updateBlockOutput(block) // take in the back end block and update the F
 
 function start() // for start button
 {
-    if (!userInput.role.value)
+    if (!isGameStarted)
     {
-        header = `Please select a role before proceeding...`;
-    }
-    else if (isGameWonByPlayer || isGameWonByComputer)
-    {
-        header = `Please reset the game before proceeding...`;
+        if (!userInput.role.value)
+        {
+            header = `Please select a role before proceeding...`;
+        }
+        else if (isGameWonByPlayer || isGameWonByComputer)
+        {
+            header = `Please reset the game before proceeding...`;
+        }
+        else
+        {
+            header = `The game is started; the "x" goes first.`;
+            playerRole = userInput.role.value;
+            isGameStarted = true;
+        }
     }
     else
     {
-        header = `The game is started; the "x" goes first.`;
-        playerRole = userInput.role.value;
-        isGameStarted = true;
+        header = "The game is already in progress.";
     }
     display();
 }
