@@ -268,7 +268,7 @@ function unlockBlock(block) // helper of updateBlockForPlayer
     block.isLocked = false;
 }
 
-function changeHeader(r, c) // respond to mouseover; present notice or warning to the user (i.e. for event listener)
+function changeHeader(r, c) // respond to click or mouseout; present notice or warning to the user (i.e. for event listener)
 {
     if (isGameStarted === true)
     {
